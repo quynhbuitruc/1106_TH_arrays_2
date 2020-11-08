@@ -12,8 +12,15 @@
         let input = prompt("Nhập vào 1 dãy số nguyên bất kỳ")
         let stringA = input.toString()
         let result = [stringA[0]]
-        
-
+        for (let i = 1; i < stringA.length; i++) {
+            if ((stringA[i - 1] % 2 === 0) && (stringA[i] % 2 === 0)) {
+                result.push('-', stringA[i]);
+            }
+            else {
+                result.push(stringA[i]);
+            }
+        }
+        console.log(result.join(''));
     </script>
 </body>
 
