@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC tac TOE</title>
+</head>
+
+<body>
+    <h3>TIC tac TOE</h3>
+    <p id="ttt"></p>
+    <button onclick="player1()"> Player1 </button>
+    <button onclick="player2()"> Player2 </button>
+    <script>
+        let board = document.getElementById("ttt")
+
+        let boaRD = []
+        let data = ""
+        for (let i = 0; i < 5; i++) {
+            boaRD[i] = ["  . ", "  . ", "  . ", "  . ", "  . "]
+        }
+
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += boaRD[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        data += '<br/><br/>'
+        board.innerHTML = data
+
+        function player1() {
+            let Y1
+            let X1
+            do {
+                Y1 = prompt("Vị trí hàng từ 0 tới 4")
+                X1 = prompt("Vị trí cột từ 0 tới 4")
+                data = ""
+            }
+            while (boaRD[Y1][X1] !== "  . ")
+            boaRD[Y1][X1] = "X"
+            for (let i = 0; i < 5; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    data += boaRD[i][j] + "&nbsp;&nbsp;";
+                }
+            }
+            data += '<br/><br/>'
+            board.innerHTML = data
+        }
+
+        function player2() {
+            let X2
+            let Y2
+            do {
+                Y2 = prompt("Vị trí hàng từ 0 tới 4")
+                X2 = prompt("Vị trí cột từ 0 tới 4")
+                data = ""
+            }
+            while (boaRD[Y2][X2] !== "  . ")
+            boaRD[Y2][X2] = "O"
+            for (let i = 0; i < 5; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    data += boaRD[i][j] + "&nbsp;&nbsp;";
+                } data += '<br/><br/>'
+                board.innerHTML = data
+            }
+        }
+    </script>
+</body>
+
+</html>
