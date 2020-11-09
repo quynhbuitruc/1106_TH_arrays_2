@@ -20,14 +20,18 @@
         for (let i = 0; i < 5; i++) {
             boaRD[i] = ["  . ", "  . ", "  . ", "  . ", "  . "]
         }
-        for (let i = 0; i < 5; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += boaRD[i][j] + "&nbsp;&nbsp;";
+        function draw() {
+            for (let i = 0; i < 5; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    data += boaRD[i][j] + "&nbsp;&nbsp;";
+                }
             }
+            data += '<br/><br/>'
+            board.innerHTML = data
         }
-        data += '<br/><br/>'
-        board.innerHTML = data
+
+        draw()
 
         function player1() {
             let Y1
@@ -41,28 +45,16 @@
 
             boaRD[Y1][X1] = "X"
 
-            for (let i = 0; i < 5; i++) {
-                data += "<br/>";
-                for (let j = 0; j < 5; j++) {
-                    data += boaRD[i][j] + "&nbsp;&nbsp;";
-                }
-            }
-            data += '<br/><br/>'
-            board.innerHTML = data
+            draw()
 
             for (let j = 0; j < 5; j++) {
                 for (let i = 0; i < 3; i++) {
                     if (boaRD[j][i] == "X" & boaRD[j][i + 1] == "X" & boaRD[j][i + 2] == "X") {
                         alert("Chúc mừng, bạn đã chiến thắng!!!")
-                        document.close
-                    }
-                    if (boaRD[j][i] == "X" & boaRD[j + 1][i] == "X" & boaRD[j + 2][i] == "X") {
+                    } else if (boaRD[j][i] == "X" & boaRD[j + 1][i] == "X" & boaRD[j + 2][i] == "X") {
                         alert("Chúc mừng, bạn đã chiến thắng!!!")
-                        document.close
-                    }
-                    if (boaRD[j][i] == "X" & boaRD[j + 1][i + 1] == "X" & boaRD[j + 2][i + 2] == "X") {
+                    } else if (boaRD[j][i] == "X" & boaRD[j + 1][i + 1] == "X" & boaRD[j + 2][i + 2] == "X") {
                         alert("Chúc mừng, bạn đã chiến thắng!!!")
-                        document.close
                     }
                 }
             }
@@ -78,29 +70,19 @@
                 data = ""
             }
             while (boaRD[Y2][X2] !== "  . ")
+
             boaRD[Y2][X2] = "O"
-            for (let i = 0; i < 5; i++) {
-                data += "<br/>";
-                for (let j = 0; j < 5; j++) {
-                    data += boaRD[i][j] + "&nbsp;&nbsp;";
-                }
-            }
-            data += '<br/><br/>'
-            board.innerHTML = data
+
+            draw()
 
             for (let j = 0; j < 5; j++) {
                 for (let i = 0; i < 3; i++) {
                     if (boaRD[j][i] == "O" & boaRD[j][i + 1] == "O" & boaRD[j][i + 2] == "O") {
                         alert("Chúc mừng, bạn đã chiến thắng!!!")
-                        document.close
-                    }
-                    if (boaRD[j][i] == "O" & boaRD[j + 1][i] == "O" & boaRD[j + 2][i] == "O") {
+                    } else if (boaRD[j][i] == "O" & boaRD[j + 1][i] == "O" & boaRD[j + 2][i] == "O") {
                         alert("Chúc mừng, bạn đã chiến thắng!!!")
-                        document.close
-                    }
-                    if (boaRD[j][i] == "O" & boaRD[j + 1][i + 1] == "O" & boaRD[j + 2][i + 2] == "O") {
+                    } else if (boaRD[j][i] == "O" & boaRD[j + 1][i + 1] == "O" & boaRD[j + 2][i + 2] == "O") {
                         alert("Chúc mừng, bạn đã chiến thắng!!!")
-                        document.close
                     }
                 }
             }
