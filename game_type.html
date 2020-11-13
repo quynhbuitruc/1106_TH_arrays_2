@@ -12,16 +12,18 @@
     <textarea oninput="typo()" id="inputText" cols="50" rows="30"></textarea>
 
     <script>
-        let wantedText = ["Đ", "â", "y", " ", "l", "à", " ", "R", "A", "P", " ", "V", "I", "Ệ", "T", ". ", "\n"]
+        let wantedText = ["Đ", "â", "y", " ", "l", "à", " ", "R", "A", "P", " ", "V", "I", "Ệ", "T", ". "]
         let i = 0
         let inputText = ""
         function typo() {
             inputText += wantedText[i]
-            document.getElementById("inputText").value = inputText
             i++
             if (i == wantedText.length) {
+                inputText += "\n"
+                console.log(document.getElementById("inputText").value)
                 i = 0
             }
+            document.getElementById("inputText").value = inputText
         }
 
     </script>
