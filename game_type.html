@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing game</title>
 </head>
+
 <body>
     <h3> Game </h3>
-    <textarea name="inputText" id="" cols="30" rows="10"></textarea> 
+    <textarea oninput="typo()" id="inputText" cols="50" rows="30"></textarea>
+
+    <script>
+        let wantedText = ["Đ", "â", "y", " ", "l", "à", " ", "R", "A", "P", " ", "V", "I", "Ệ", "T", ". ", "\n"]
+        let i = 0
+        let inputText = ""
+        function typo() {
+            inputText += wantedText[i]
+            document.getElementById("inputText").value = inputText
+            i++
+            if (i == wantedText.length) {
+                i = 0
+            }
+        }
+
+    </script>
 </body>
+
 </html>
