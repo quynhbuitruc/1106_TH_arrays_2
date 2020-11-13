@@ -17,8 +17,7 @@
         let inputText = ""
         function typo() {
             inputText += wantedText[i]
-            i++
-            if (i == wantedText.length) {
+            if (++i == wantedText.length) {
                 inputText += "\n"
                 console.log(document.getElementById("inputText").value)
                 i = 0
